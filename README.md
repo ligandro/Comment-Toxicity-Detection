@@ -1,33 +1,42 @@
 # Comment-Toxicity-Detection
-## A Comment Toxicity Model with Deep Learning and Python. LSTM model used 
+## A Comment Toxicity Detection Model with Deep Learning and Python. LSTM model used 
 ## About Project:
-This project is broadly divided into two sections: the Resume Parser and then the Classifier .This project is aimed at building a multi-label classification model using the principles of Deep Learning and NLP to effectively classify users into job categories given their resume.
-For the Resume Parser, the raw text will be extracted from resumes and blocks would be isolated along with the separation of entities. 
-The model classifies an input resume into categories of IT jobs, a resume can belong to multiple categories.Since this is a multi-label classification problem we will pre-process the text using NER(Name Entity recognition) and use different model architectures like DNN,CNN,LSTM and Bert CLassifier to predict the final class. 
+This project is used to classify comments and assign true or false values to following labels:
+toxic
+severe_toxic
+obscene
+threat
+insult
+identity_hate
+
+A model is created which predicts a probability of each type of toxicity for each comment. Data is from the Toxic Comment Classification Challenge on Kaggle.In the text preprocessing, a vectorizer is used to convert the text into vectors. It is then fed into the bidirectional LSTM model for training. 
+
+![Screenshot 2023-06-23 at 9 39 42 PM](https://github.com/ligandro/Comment-Toxicity-Detection/assets/97714265/f90808c3-37af-443a-af39-4f945ab41d3d)
+
+Precision: 0.9416884183883667
+Recall:0.9151395559310913
+Accuracy:0.4603811502456665
 
 ## Business Use case:
-*   Our deep learning project can be used by users to find the job description as per their resume.
-*   What kind of job might be the most appropriate and where the seekeers could find them is the base problem we are trying to solve. 
-*   It can be used by companies with heavy work-loads to pass the candidate resumes through our application to check what all IT roles a certain resume fits into.
-*   Creates an executive or management summary that recruiters may use to evaluate candidates by reading. It enables you to quickly arrange the resumes of the candidates. 
-*   It takes less time to assess and pick the most relevant talent who is a good fit for your business.
+*   This project can be used to label toxic comments from social media sites such as youtube
+*   Creates a detailed classification instead of just classifying as negative or positive
 
 
 ## Model
 ### LSTM Neural Network
 
-## TechStack Used(Python Libraries):
-* BeautifulSoup4
-* Flask
-* Keras_Preprocessing
-* Nltk
-* Pandas
-* Pdfminer
-* Spacy
-* Tensorflow
-* Werkzeug
+Long Short Term Memory is a kind of recurrent neural network. In RNN output from the last step is fed as input in the current step. It tackles the problem of long-term dependencies of RNN in which the RNN cannot predict the word stored in the long-term memory but can give more accurate predictions from the recent information. As the gap length increases RNN does not give an efficient performance. LSTM can by default retain the information for a long period of time. It is used for processing, predicting, and classifying on the basis of time-series data.LSTM networks are capable of learning long-term dependencies in sequential data, which makes them well suited for tasks such as language translation, speech recognition, and time series forecasting.
 
-## Instructions to run
+Read more at https://www.geeksforgeeks.org/deep-learning-introduction-to-long-short-term-memory/
+
+
+## TechStack Used(Python Libraries):
+* Numpy
+* Pandas
+* Tensorflow
+* Keras
+* Gradio
+
 
 Loss over epochs
 
